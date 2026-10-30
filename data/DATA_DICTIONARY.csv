@@ -1,0 +1,8 @@
+dataset,analysis_variable,accepted_input_columns,use
+microplastics,longitude,longitude | lon | decimalLongitude,spatial location
+microplastics,latitude,latitude | lat | decimalLatitude,spatial location
+microplastics,concentration,concentration | microplastic_concentration | particles_per_liter | pieces_per_litre | value,primary pollution measure
+biodiversity,longitude,decimalLongitude | longitude | lon,spatial location
+biodiversity,latitude,decimalLatitude | latitude | lat,spatial location
+biodiversity,scientific_name,scientificName | scientific_name | species,species-richness calculation
+biodiversity,taxonomic_group,phylum | class | taxonomic_group,optional taxonomic-group richness

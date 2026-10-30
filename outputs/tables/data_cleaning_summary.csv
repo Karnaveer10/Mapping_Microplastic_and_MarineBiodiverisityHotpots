@@ -1,0 +1,3 @@
+dataset,raw_records,invalid_coordinates,outside_study_area,missing_concentration,invalid_concentration,duplicates_removed,remaining_records,missing_species_identity
+microplastics,15533,0,0,0,0,0,15533,NA
+biodiversity,7059160,550,0,NA,NA,5421927,1636683,453

@@ -1,0 +1,6 @@
+source("config.R"); source("R/utils.R"); load_project_packages(); ensure_dirs()
+grid <- readRDS("data/interim/grid_0.5deg.rds")
+analysis <- aggregate_grid(readRDS("data/interim/microplastics_joined.rds"), readRDS("data/interim/biodiversity_joined.rds"), grid) |> score_hotspots(cfg$hotspot_percentile)
+saveRDS(analysis, "data/processed/grid_analysis.rds"); sf::st_write(analysis, "data/processed/grid_analysis.gpkg", delete_dsn = TRUE, quiet = TRUE); readr::write_csv(sf::st_drop_geometry(analysis), "data/processed/grid_analysis.csv")
+ranked <- analysis |> sf::st_drop_geometry() |> dplyr::filter(!is.na(hotspot_score)) |> dplyr::arrange(rank)
+readr::write_csv(ranked, "outputs/tables/grid_summary.csv"); readr::write_csv(head(ranked, 10), "outputs/tables/top_10_hotspots.csv"); readr::write_csv(head(ranked, cfg$top_n), "outputs/tables/top_20_hotspots.csv")

@@ -1,0 +1,1 @@
+source("config.R"); source("R/utils.R"); load_project_packages(); ensure_dirs(); z <- run_spatial_statistics(readRDS("data/processed/grid_analysis.rds"),cfg); readr::write_csv(z$moran,"outputs/tables/moran_i_results.csv"); readr::write_csv(z$gi,"outputs/tables/getis_ord_results.csv"); readr::write_csv(z$clusters,"outputs/tables/dbscan_results.csv")

@@ -1,0 +1,150 @@
+PackageIdentifier: RProject.R
+PackageVersion: 4.6.1
+Moniker: r
+Documentations:
+- DocumentLabel: Manual
+  DocumentUrl: https://cran.r-project.org/manuals.html
+- DocumentLabel: FAQ
+  DocumentUrl: https://cran.r-project.org/faqs.html
+Tags:
+- data
+- datascience
+- diagram
+- graph
+- graphics
+- plot
+- rstats
+- statistics
+- stats
+PackageLocale: en-US
+Copyright: Copyright (C) 2026 The R Foundation for Statistical Computing
+Description: "R is a language and environment for statistical computing and graphics.
+  It is a GNU project which is similar to the S language and environment which was
+  developed at Bell Laboratories (formerly AT&T, now Lucent Technologies) by John
+  Chambers and colleagues. R can be considered as a different implementation of S.
+  There are some important differences, but much code written for S runs unaltered
+  under R.\nR provides a wide variety of statistical (linear and nonlinear modelling,
+  classical statistical tests, time-series analysis, classification, clustering, ...)
+  and graphical techniques, and is highly extensible. The S language is often the
+  vehicle of choice for research in statistical methodology, and R provides an Open
+  Source route to participation in that activity.\nOne of R\u2019s strengths is the
+  ease with which well-designed publication-quality plots can be produced, including
+  mathematical symbols and formulae where needed. Great care has been taken over the
+  defaults for the minor design choices in graphics, but the user retains full control.\nR
+  is available as Free Software under the terms of the Free Software Foundation\u2019s
+  GNU General Public License in source code form. It compiles and runs on a wide variety
+  of UNIX platforms and similar systems (including FreeBSD and Linux), Windows and
+  MacOS."
+ShortDescription: R is a free software environment for statistical computing and graphics.
+License: GPL-2.0-or-later
+LicenseUrl: https://www.r-project.org/Licenses
+PackageName: R for Windows
+PackageUrl: https://cloud.r-project.org
+Publisher: R Core Team
+PublisherSupportUrl: https://www.r-project.org/help.html
+PublisherUrl: https://www.r-project.org
+ReleaseNotes: "New Features\n- The LaTeX class \u2018jss\u2019 bundled in \u2018share/texmf/tex/latex/jss.cls\u2019
+  has been updated to work with \u2018hyperref\u2019 version 7.01q (2026/04/24).\n-
+  Plain-text (and legacy HTML) conversion for a simple Rd \\eqn{} now handles \\geq,
+  \\leq, \\neq and \\ne in addition to \\ge and \\le (PR#19070).\nBug Fixes\n- abbreviate(<non-ASCII>)
+  now works better, using iswlower() and *upper() to treat \u201Cwide\u201D characters,
+  thanks to Kevin's PR#19058.\n- cut(1:11, {}) now signals an error for the invalid
+  breaks, fixing PR#19057, thanks to Kevin Ushey.\n- all(<symbol>) signals an error
+  now, as some similar coercions; previously, the coercion of the symbol resulted
+  in NULL internally, raised a warning, and could access illegal memory; thanks to
+  Kevin Ushey's PR#19054.\n- stl() now checks its 3 x 3 tuning parameters on the R
+  level; stl(*, s.window = 0) now \u201Cworks\u201D instead dumping core, stl(*, s.window
+  = 1) \u201Cworks\u201D correctly, too. Also, the summary() method mentions the robustness
+  weights only if any robustness iterations happened.\n  Further, stl() is now based
+  on C code, translated from previous Fortran, triggered by a flang 22 compiler optimization
+  bug (-O2).\n- The border case zapsmall(x, digits=Inf) where x contains an Inf entry
+  no longer returns all NaN but rather x. The improved help page now has more non-default
+  examples.\n- wilcox.test(x, exact=FALSE, correct = k)'s p-value computation got
+  a missing dnorm(z) factor, and so did the 2-sample case, in addition to more fixes.\n-
+  The data part of getGenerics() listed package names for generic functions defined
+  in more than one package. Now it lists generic function names, as intended. Thanks
+  to Michael Chirico for report and patch proposal (PR#19080).\n- Overly long dyn.load()
+  error messages (C level dlerror()), should no longer corrupt its state, thanks to
+  Ivan Krylov's PR#19029 report and patch.\n- as.matrix(<POSIXlt>) again produces
+  a numeric matrix, and the c() and subassignment methods for POSIXlt objects work
+  correctly more often, e.g., without a \"tzone\" attribute, back porting a few of
+  the PR#18989 fixes from R-devel, both thanks to Suharto Anggono.\n- In methods,
+  as() now correctly coerces S4 objects to S4 superclasses extending old-style classes,
+  instead of returning only the S3 part."
+ReleaseNotesUrl: https://cloud.r-project.org/bin/windows/base/old/4.6.1/NEWS.R-4.6.1.html
+Localization:
+- Documentations:
+  - DocumentLabel: "\u624B\u518C"
+    DocumentUrl: https://cran.r-project.org/manuals.html
+  - DocumentLabel: "\u5E38\u89C1\u95EE\u9898"
+    DocumentUrl: https://cran.r-project.org/faqs.html
+  Tags:
+  - "r\u8BED\u8A00"
+  - "\u56FE\u5F62"
+  - "\u56FE\u793A"
+  - "\u56FE\u8868"
+  - "\u6570\u636E"
+  - "\u6570\u636E\u79D1\u5B66"
+  - "\u7ED8\u56FE"
+  - "\u7EDF\u8BA1"
+  PackageLocale: zh-CN
+  Copyright: Copyright (C) 2026 The R Foundation for Statistical Computing
+  Description: "R \u662F\u4E00\u4E2A\u7528\u4E8E\u7EDF\u8BA1\u8BA1\u7B97\u548C\u7ED8\u56FE\u7684\u8BED\u8A00\u548C\u73AF\u5883\u3002\u5B83\u662F\u4E00\u4E2A
+    GNU \u9879\u76EE,\u4E0E John Chambers \u53CA\u5176\u540C\u4E8B\u5728\u8D1D\u5C14\u5B9E\u9A8C\u5BA4(\u539F
+    AT&T,\u73B0\u4E3A Lucent Technologies)\u5F00\u53D1\u7684 S \u8BED\u8A00\u548C\u73AF\u5883\u76F8\u4F3C\u3002R
+    \u53EF\u4EE5\u88AB\u8BA4\u4E3A\u662F S \u7684\u4E00\u79CD\u4E0D\u540C\u5B9E\u73B0,\u4E24\u8005\u4E4B\u95F4\u6709\u4E00\u4E9B\u91CD\u8981\u7684\u533A\u522B,\u4F46\u8BB8\u591A\u4E3A
+    S \u7F16\u5199\u7684\u4EE3\u7801\u53EF\u4EE5\u539F\u5C01\u4E0D\u52A8\u5730\u5728
+    R \u8FD0\u884C\u3002\nR \u63D0\u4F9B\u4E86\u5404\u79CD\u5404\u6837\u7684\u7EDF\u8BA1(\u7EBF\u6027\u548C\u975E\u7EBF\u6027\u5EFA\u6A21\u3001\u7ECF\u5178\u7EDF\u8BA1\u6D4B\u8BD5\u3001\u65F6\u95F4\u5E8F\u5217\u5206\u6790\u3001\u5206\u7C7B\u3001\u805A\u7C7B......)\u548C\u7ED8\u56FE\u6280\u672F,\u5E76\u4E14\u5177\u6709\u9AD8\u5EA6\u7684\u53EF\u6269\u5C55\u6027\u3002S
+    \u8BED\u8A00\u901A\u5E38\u662F\u7EDF\u8BA1\u65B9\u6CD5\u5B66\u7814\u7A76\u7684\u9996\u9009\u5DE5\u5177,\u800C
+    R \u63D0\u4F9B\u4E86\u4E00\u6761\u53C2\u4E0E\u8BE5\u6D3B\u52A8\u7684\u5F00\u6E90\u9014\u5F84\u3002\nR
+    \u7684\u4F18\u70B9\u4E4B\u4E00\u662F\u53EF\u4EE5\u8F7B\u677E\u751F\u6210\u7CBE\u5FC3\u8BBE\u8BA1\u7684\u3001\u5177\u6709\u51FA\u7248\u8D28\u91CF\u7684\u56FE\u8868,\u5305\u62EC\u6570\u5B66\u7B26\u53F7\u548C\u516C\u5F0F(\u5982\u9700\u8981)\u3002\u6211\u4EEC\u5BF9\u56FE\u5F62\u4E2D\u6B21\u8981\u8BBE\u8BA1\u9009\u9879\u7684\u9ED8\u8BA4\u503C\u91C7\u53D6\u4E86\u975E\u5E38\u8C28\u614E\u7684\u6001\u5EA6,\u4F46\u7528\u6237\u4ECD\u62E5\u6709\u5B8C\u5168\u7684\u63A7\u5236\u6743\u3002\nR
+    \u662F\u5728\u81EA\u7531\u8F6F\u4EF6\u57FA\u91D1\u4F1A GNU \u901A\u7528\u516C\u5171\u8BB8\u53EF\u8BC1\u7684\u6761\u6B3E\u4E0B\u4EE5\u6E90\u4EE3\u7801\u5F62\u5F0F\u63D0\u4F9B\u7684\u81EA\u7531\u8F6F\u4EF6\u3002\u5B83\u53EF\u4EE5\u5728\u5404\u79CD
+    UNIX \u5E73\u53F0\u548C\u7C7B\u4F3C\u7CFB\u7EDF(\u5305\u62EC FreeBSD \u548C Linux)\u3001Windows
+    \u548C MacOS \u4E0A\u7F16\u8BD1\u548C\u8FD0\u884C\u3002"
+  ShortDescription: "R \u662F\u4E00\u4E2A\u7528\u4E8E\u7EDF\u8BA1\u8BA1\u7B97\u548C\u7ED8\u56FE\u7684\u81EA\u7531/\u514D\u8D39\u7684\u8F6F\u4EF6\u73AF\u5883\u3002"
+  License: GPL-2.0-or-later
+  LicenseUrl: https://www.r-project.org/Licenses
+  PackageName: R for Windows
+  PackageUrl: https://cloud.r-project.org
+  Publisher: R Core Team
+  PublisherSupportUrl: https://www.r-project.org/help.html
+  PublisherUrl: https://www.r-project.org
+  ReleaseNotesUrl: https://cloud.r-project.org/bin/windows/base/old/4.6.1/NEWS.R-4.6.1.html
+Installers:
+- Architecture: x64
+  InstallerType: inno
+  InstallerSha256: c5424c40cd70ef85765a55d2ff96bb602b5f30ed536938ff004f14db5db3c2df
+  InstallerUrl: https://cloud.r-project.org/bin/windows/base/old/4.6.1/R-4.6.1-win.exe
+  Scope: machine
+  ReleaseDate: 2026-06-26
+  InstallerAbortsTerminal: false
+  InstallLocationRequired: false
+  RequireExplicitUpgrade: false
+  DisplayInstallWarnings: false
+  DownloadCommandProhibited: false
+  ArchiveBinariesDependOnPath: false
+  ProductCode: R for Windows 4.6.1_is1
+  UpgradeBehavior: uninstallPrevious
+  Commands:
+  - r
+  - rproject
+  FileExtensions:
+  - q
+  - r
+  - rdata
+  - s
+  - ssc
+  ExpectedReturnCodes:
+  - InstallerReturnCode: 2
+    ReturnResponse: cancelledByUser
+  - InstallerReturnCode: 5
+    ReturnResponse: cancelledByUser
+  - InstallerReturnCode: 8
+    ReturnResponse: rebootRequiredForInstall
+  InstallerSwitches:
+    Silent: /SP- /VERYSILENT /SUPPRESSMSGBOXES /NORESTART
+    SilentWithProgress: /SP- /SILENT /SUPPRESSMSGBOXES /NORESTART
+    Log: /LOG="<LOGPATH>"
+    InstallLocation: /DIR="<INSTALLPATH>"
+ManifestVersion: 1.12.0
+ManifestType: merged

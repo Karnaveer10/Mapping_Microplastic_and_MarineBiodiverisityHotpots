@@ -1,0 +1,10 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+Installing packages into 'D:/Projects/Mapping Marine Microplastic Pollution & Biodiversity Hotspots/renv/library/R-4.6'
+(as 'lib' is unspecified)
+trying URL 'https://cloud.r-project.org/bin/windows/contrib/4.6/sf_1.1-2.zip'
+trying URL 'https://cloud.r-project.org/bin/windows/contrib/4.6/spdep_1.4-2.zip'
+All project packages are available in D:\Projects\Mapping Marine Microplastic Pollution & Biodiversity Hotspots\renv\library\R-4.6

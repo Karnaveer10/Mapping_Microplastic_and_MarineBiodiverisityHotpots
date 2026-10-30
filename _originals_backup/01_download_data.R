@@ -1,0 +1,9 @@
+# Official acquisition log. No substitute data are used.
+source("config.R")
+source("R/utils.R")
+ensure_dirs()
+template <- tibble::tibble(dataset = c("NOAA NCEI Marine Microplastics", "OBIS / IndOBIS marine occurrences"), provider = c("NOAA National Centers for Environmental Information", "Ocean Biodiversity Information System"), url = c(cfg$sources$microplastics, cfg$sources$biodiversity), required_filename = c(basename(cfg$paths$microplastics_raw), basename(cfg$paths$biodiversity_raw)), access_date = as.character(Sys.Date()), required_fields = c("longitude, latitude, concentration; retain date, depth, sample type and method where supplied", "decimalLongitude, decimalLatitude, scientificName; retain occurrenceID, eventID and taxonomic fields where supplied"), status = "Place an official CSV export in data/raw")
+readr::write_csv(template, cfg$paths$metadata)
+dictionary <- tibble::tribble(~dataset, ~analysis_variable, ~accepted_input_columns, ~use, "microplastics", "longitude", "longitude | lon | decimalLongitude", "spatial location", "microplastics", "latitude", "latitude | lat | decimalLatitude", "spatial location", "microplastics", "concentration", "concentration | microplastic_concentration | particles_per_liter | pieces_per_litre | value", "primary pollution measure", "biodiversity", "longitude", "decimalLongitude | longitude | lon", "spatial location", "biodiversity", "latitude", "decimalLatitude | latitude | lat", "spatial location", "biodiversity", "scientific_name", "scientificName | scientific_name | species", "species-richness calculation", "biodiversity", "taxonomic_group", "phylum | class | taxonomic_group", "optional taxonomic-group richness")
+readr::write_csv(dictionary, "data/DATA_DICTIONARY.csv")
+message("Data provenance and data dictionary written. Official raw CSVs are required before analysis can run.")

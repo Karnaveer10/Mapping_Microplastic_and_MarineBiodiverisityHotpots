@@ -1,0 +1,7 @@
+source("config.R"); source("R/utils.R"); load_project_packages(); ensure_dirs()
+bio <- readRDS("data/interim/biodiversity_clean.rds") |> sf::st_drop_geometry()
+summary <- bio |> dplyr::summarise(occurrence_count = dplyr::n(), unique_species_count = dplyr::n_distinct(scientific_name))
+readr::write_csv(summary, "outputs/tables/biodiversity_eda_summary.csv")
+counts <- bio |> dplyr::count(scientific_name, sort = TRUE) |> dplyr::slice_head(n = 20)
+p <- ggplot2::ggplot(counts, ggplot2::aes(x = stats::reorder(scientific_name, n), y = n)) + ggplot2::geom_col(fill = "#756bb1") + ggplot2::coord_flip() + ggplot2::labs(title = "Most frequently observed species", x = "Scientific name", y = "Occurrences") + ggplot2::theme_minimal()
+ggplot2::ggsave("outputs/figures/biodiversity_top_species.png", p, width = 9, height = 7, dpi = 300)

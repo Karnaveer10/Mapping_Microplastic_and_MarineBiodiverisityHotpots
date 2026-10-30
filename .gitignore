@@ -1,0 +1,14 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# Local R package library and installers
+renv/library/
+tools/*.exe
+
+# Large downloaded/intermediate data
+data/raw/obis_indian_ocean_occurrences.csv
+data/interim/*.rds
+data/interim/tmp/
+data/processed/*.rds

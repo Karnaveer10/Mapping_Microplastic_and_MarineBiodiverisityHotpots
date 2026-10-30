@@ -1,0 +1,3 @@
+dataset,provider,url,required_filename,access_date,required_fields,status
+NOAA NCEI Marine Microplastics,NOAA National Centers for Environmental Information,https://www.ncei.noaa.gov/products/optimum-interpolation-sst,noaa_oisst_marine_heatwaves.csv,2026-10-14,"longitude, latitude, concentration; retain date, depth, sample type and method where supplied",Place an official CSV export in data/raw
+OBIS / IndOBIS marine occurrences,Ocean Biodiversity Information System,https://obis.org/data/access/,obis_indian_ocean_occurrences.csv,2026-10-14,"decimalLongitude, decimalLatitude, scientificName; retain occurrenceID, eventID and taxonomic fields where supplied",Place an official CSV export in data/raw
